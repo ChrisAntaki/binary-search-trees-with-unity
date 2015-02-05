@@ -8,6 +8,7 @@ public class Node : MonoBehaviour {
 	public Node left;
 	public Node right;
 	public int value;
+	public int index;
 
 	public int GetDepth () {
 		var depth = 0;
@@ -21,7 +22,7 @@ public class Node : MonoBehaviour {
 
 	public void UpdatePosition () {
 		var depth = GetDepth ();
-		transform.position = new Vector3 (value, 5f - 1.1f * depth, 0);
+		transform.position = new Vector3 (index, 5f - 1.1f * depth, 0);
 	}
 
 }
