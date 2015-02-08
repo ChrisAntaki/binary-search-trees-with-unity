@@ -17,13 +17,14 @@ public class Controller : MonoBehaviour {
 			return null;
 		}
 
-		var middleIndex = (start + end) / 2;
+		var middleIndex = start + (end - start) / 2;
 		var middleValue = numbers [middleIndex];
 
 		var node = CreateNode ();
 		node.index = middleIndex;
 		node.parent = parent;
 		node.value = middleValue;
+		node.UpdateText ();
 
 		if (!root) {
 			root = node;
@@ -44,7 +45,8 @@ public class Controller : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		int[] numbers = new int[] {
-			3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
+			3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+//			3, 4, 5, 6
 //			1, 2, 3, 4, 5, 6, 7
 		};
 
