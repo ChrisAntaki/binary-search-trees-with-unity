@@ -57,6 +57,20 @@ public class Node : MonoBehaviour {
 		var sibling = NextSiblingOfSameDepth ();
 		if (sibling) {
 			sibling.cube.renderer.material.color = Color.blue;
+
+			ColorPathToNodeOfSameDepth (sibling);
+		}
+	}
+
+	public void ColorPathToNodeOfSameDepth (Node end) {
+		var start = this;
+
+		while (start != end) {
+			start = start.parent;
+			end = end.parent;
+
+			start.cube.renderer.material.color = Color.green;
+			end.cube.renderer.material.color = Color.green;
 		}
 	}
 
@@ -97,6 +111,8 @@ public class Node : MonoBehaviour {
 		if (left) {
 			if (currentDepth == targetDepth -1) {
 				return left;
+			} else {
+				left.cube.renderer.material.color = Color.red;
 			}
 			node = left.GetChildOfDepth (targetDepth);
 			if (node) {
@@ -107,6 +123,8 @@ public class Node : MonoBehaviour {
 		if (right) {
 			if (currentDepth == targetDepth -1) {
 				return right;
+			} else {
+				right.cube.renderer.material.color = Color.red;
 			}
 			node = right.GetChildOfDepth (targetDepth);
 			if (node) {
