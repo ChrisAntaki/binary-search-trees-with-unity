@@ -2,17 +2,22 @@
 using System.Collections;
 
 public class Node : MonoBehaviour {
-
-	public Node root;
-	public Node parent;
-	public Node left;
-	public Node right;
-	public int value;
-	public int index;
-
-	// Representation
+	
 	public GameObject cube;
 	public GameObject label;
+
+	[HideInInspector]
+	public Node root;
+	[HideInInspector]
+	public Node parent;
+	[HideInInspector]
+	public Node left;
+	[HideInInspector]
+	public Node right;
+	[HideInInspector]
+	public int value;
+	[HideInInspector]
+	public int index;
 
 	public void Start () {
 	}
